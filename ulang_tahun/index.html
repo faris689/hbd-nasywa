@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Selamat Ulang Tahun, Nasywa ❤️</title>
+    <!-- Font Awesome untuk ikon hati dan kue -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #ffdde1 0%, #f9c9d0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efek Hujan Hati */
+        .heart-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 80, 120, 0.4);
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+            background: rgba(255, 245, 245, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 45px;
+            padding: 35px 25px;
+            box-shadow: 0 25px 40px rgba(210, 70, 100, 0.25);
+            border: 2px solid rgba(255, 220, 240, 0.7);
+            position: relative;
+            z-index: 10;
+            margin: 20px auto;
+            transition: 0.3s;
+        }
+
+        /* Header dengan foto (placeholder) */
+        .foto-pasangan {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .foto-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffb6c1, #ff8da1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(200, 60, 100, 0.3);
+            border: 4px solid white;
+        }
+
+        .foto-frame i {
+            font-size: 55px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .love-connector {
+            font-size: 40px;
+            color: #ff4d6d;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #b23b4b;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 0 rgba(255, 200, 210, 0.6);
+            word-break: break-word;
+        }
+
+        .age-21 {
+            background: #ff4d6d;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 15px auto 20px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            box-shadow: 0 10px 0 #a12a3a, 0 15px 25px rgba(255, 77, 109, 0.4);
+            letter-spacing: 5px;
+            border: 3px solid #ffe9f0;
+        }
+
+        .tanggal-spesial {
+            background: rgba(255, 225, 230, 0.9);
+            padding: 18px;
+            border-radius: 30px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            border: 2px dashed #ff6f91;
+        }
+
+        .tanggal-item {
+            text-align: center;
+        }
+
+        .tanggal-angka {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c9184a;
+            line-height: 1;
+        }
+
+        .tanggal-label {
+            font-size: 1rem;
+            color: #590d22;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .surat-cinta {
+            background: #fff4f6;
+            padding: 28px 22px;
+            border-radius: 30px 30px 30px 0;
+            margin: 30px 0;
+            border-left: 12px solid #ff8c9c;
+            box-shadow: 0 8px 0 #d66b7a;
+            font-size: 1.2rem;
+            line-height: 1.75;
+            color: #31171a;
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .surat-cinta span.heart-emoji {
+            color: #e63946;
+            font-size: 1.6rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffe5b4 0%, #ffe5b4 40%, #ffdab9 90%);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #9d2235;
+        }
+
+        .galeri-kenangan {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 35px 0 20px;
+        }
+
+        .galeri-item {
+            background: #ffeef0;
+            border-radius: 25px;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 8px 0 #d496a1;
+            border: 2px solid white;
+            transition: 0.25s;
+        }
+
+        .galeri-item i {
+            font-size: 2.8rem;
+            color: #bf3a4b;
+            margin-bottom: 8px;
+        }
+
+        .galeri-item p {
+            font-weight: 600;
+            color: #820933;
+        }
+
+        .galeri-item:hover {
+            transform: translateY(-8px);
+            background: #ffe0e5;
+        }
+
+        .doa {
+            background: #fee3e6;
+            padding: 20px;
+            border-radius: 25px;
+            margin: 30px 0 20px;
+            color: #5c1a23;
+            border-bottom: 7px solid #ff758f;
+            font-size: 1.1rem;
+        }
+
+        .btn-kejutan {
+            background: radial-gradient(circle at 30% 30%, #ff8a9c, #e63946);
+            border: none;
+            padding: 20px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            border-bottom: 8px solid #921f2f;
+            transition: 0.1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 15px 30px #ff99a1;
+            margin-top: 15px;
+        }
+
+        .btn-kejutan:active {
+            border-bottom-width: 3px;
+            transform: translateY(5px);
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #ac3f4b;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            h1 { font-size: 1.9rem; }
+            .age-21 { font-size: 1.8rem; padding: 12px 20px; }
+            .tanggal-angka { font-size: 1.8rem; }
+            .galeri-kenangan { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hujan Hati Romantis -->
+<div class="heart-rain" id="heartRain"></div>
+
+<div class="container">
+    
+    <!-- Foto Profil Simbolis Faris & Nasywa -->
+<div class="foto-pasangan">
+    <div class="foto-frame">
+        <img src="nasywa1.jpg" alt="Faris" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    </div>
+    <div class="love-connector">
+        <i class="fas fa-heart"></i>
+    </div>
+    <div class="foto-frame">
+        <img src="nasywa.jpg" alt="Nasywa" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    </div>
+</div>
+
+    <!-- Judul Utama -->
+    <h1>🐣 HBD SAYANGKU! 🐣</h1>
+    <div style="text-align: center;">
+        <span class="age-21">
+            <i class="fas fa-cake-candles" style="margin-right: 10px;"></i> 21 <i class="fas fa-cake-candles" style="margin-left: 10px;"></i>
+        </span>
+    </div>
+
+    <!-- Tanggal Lahir yang Indah -->
+    <div class="tanggal-spesial">
+        <div class="tanggal-item">
+            <div class="tanggal-angka">22</div>
+            <div class="tanggal-label">Februari</div>
+        </div>
+        <div class="tanggal-item">
+            <div class="tanggal-angka">❤️</div>
+            <div class="tanggal-label">2005</div>
+        </div>
+        <div class="tanggal-item">
+            <div class="tanggal-angka">21</div>
+            <div class="tanggal-label">Tahun</div>
+        </div>
+    </div>
+
+    <!-- SURAT CINTA DARI FARIS -->
+    <div class="surat-cinta">
+        <span style="font-size: 2rem; float: left; margin-right: 10px;">💌</span>
+        <span class="heart-emoji">Untuk Nasywa Nisrina Nasution,</span> 
+        <br><br>
+        Dari sekian banyak tanggal, <span class="highlight">22 Februari 2005</span> jadi tanggal paling spesial karena lahirnya perempuan yang kelak bikin hidup aku penuh warna. Sekarang kamu <strong>21</strong>, bukan cuma bertambah angka, tapi makin dewasa, makin cantik, dan makin kuat. 
+        <br><br>
+        Aku nggak pandai bikin puisi, tapi aku ingin kamu selalu ingat: <span style="background: #ffc2c2; padding: 3px 12px; border-radius: 30px; display: inline-block; margin: 10px 0;"><i class="fas fa-heart" style="color: red;"></i> Aku sayang banget kamu. <i class="fas fa-heart" style="color: red;"></i></span> 
+        <br><br>
+        Terima kasih udah lahir, dan terima kasih udah jadi pacarku. Semoga di umur 21 ini semua impian kamu tercapai, rezekinya lancar, dan kita selalu bersama dalam setiap versi bahagia. 
+        <div style="text-align: right; margin-top: 25px; font-weight: bold; font-size: 1.3rem;">💘 Faris Oktanibras</div>
+    </div>
+
+    <div class="galeri-kenangan">
+    <div class="galeri-item">
+        <img src="foto1.jpg" alt="Ngopi bareng" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">2023</span>
+    </div>
+    <div class="galeri-item">
+        <img src="foto2.jpg" alt="Jalan-jalan" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">2024</span>
+    </div>
+    <div class="galeri-item">
+        <img src="foto3.jpg" alt="Nonton bioskop" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">2024</span>
+    </div>
+    <div class="galeri-item">
+        <img src="foto4.jpg" alt="Ultah sebelumnya" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">2023</span>
+    </div>
+    <div class="galeri-item">
+        <img src="foto5.jpg" alt="Teleponan malem" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">2025</span>
+    </div>
+    <div class="galeri-item">
+        <img src="foto6.jpg" alt="Selamanya" style="width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 8px;">
+        <span style="color: #c4455e;">∞</span>
+    </div>
+</div>
+
+    <!-- Doa & Harapan -->
+    <div class="doa">
+        <i class="fas fa-star" style="color: #ffac33;"></i> <strong>Doa aku:</strong> semoga setiap langkahmu selalu dalam lindungan Tuhan. Semoga kesehatan selalu menyertaimu, rezekimu dilancarkan, karier dan cita-citamu dimudahkan, dan hatimu selalu dipenuhi ketenangan. Semoga setiap impian yang pernah kamu ceritakan padaku satu per satu menjadi nyata. Dan ketika dunia terasa berat, semoga kamu selalu diberi kekuatan untuk berdiri lebih tegak dari sebelumnya.
+
+Aku juga punya doa yang sedikit egois…
+Semoga aku masih menjadi bagian dari setiap rencanamu.
+Semoga aku masih menjadi nama yang kamu sebut dalam doamu.
+Semoga aku tetap menjadi orang yang kamu pilih, bukan hanya saat semuanya mudah, tapi juga saat semuanya terasa sulit.
+
+    <!-- TOMBOL KEJUTAN SPESIAL -->
+    <button id="surpriseButton" class="btn-kejutan">
+        <i class="fas fa-gift"></i> Kejutan untuk Nasywa! <i class="fas fa-gift"></i>
+    </button>
+
+    <div id="pesanRahasia" style="display: none; background: #fbeb9b; padding: 25px; border-radius: 35px; margin-top: 25px; border: 5px dotted #e63946; font-size: 1.4rem; text-align: center; color: #6a1e2a; font-weight: bold;">
+        🌹🌹🌹🌹🌹 <br>
+        SAYANG, AKU BERJANJI <br>
+        AKAN SELALU DI SISIMU <br>
+        DALAM SUKA DAN DUKA. <br>
+        HAPPY 21ST, MY LOVE! <br>
+        🌹🌹🌹🌹🌹
+        <br>
+        <span style="font-size: 2rem;">❤️ FARIS ❤️</span>
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-heart" style="color: #e63946;"></i> Dibuat dengan sepenuh cinta oleh Faris untuk Nasywa <i class="fas fa-heart" style="color: #e63946;"></i>
+        <br>
+        <span style="font-size: 0.9rem;">22 Februari 2025 - Spesial 21 Tahun</span>
+    </div>
+</div>
+
+<script>
+    // --- HUJAN HATI OTOMATIS ---
+    const heartContainer = document.getElementById('heartRain');
+    const totalHearts = 35;
+
+    for (let i = 0; i < totalHearts; i++) {
+        createHeart();
+    }
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDuration = (Math.random() * 5 + 5) + 's'; /* 5-10s */
+        heart.style.fontSize = (Math.floor(Math.random() * 25) + 15) + 'px';
+        heart.style.animationDelay = Math.random() * 8 + 's';
+        heart.style.opacity = Math.random() * 0.5 + 0.2;
+        heartContainer.appendChild(heart);
+    }
+
+    // --- TOMBOL KEJUTAN dengan pesan spesial ---
+    const surpriseBtn = document.getElementById('surpriseButton');
+    const pesanRahasia = document.getElementById('pesanRahasia');
+
+    surpriseBtn.addEventListener('click', function() {
+        if (pesanRahasia.style.display === 'none' || pesanRahasia.style.display === '') {
+            pesanRahasia.style.display = 'block';
+            surpriseBtn.innerHTML = '<i class="fas fa-heart-broken"></i> Sembunyikan Kejutan <i class="fas fa-heart-broken"></i>';
+            // tambahan efek confetti sederhana
+            confettiEffect();
+        } else {
+            pesanRahasia.style.display = 'none';
+            surpriseBtn.innerHTML = '<i class="fas fa-gift"></i> Kejutan untuk Nasywa! <i class="fas fa-gift"></i>';
+        }
+    });
+
+    // FUNGSI CONFETTI SEDERHANA
+    function confettiEffect() {
+        for (let i = 0; i < 25; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-20px';
+            confetti.style.width = '12px';
+            confetti.style.height = '20px';
+            confetti.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            confetti.style.zIndex = '9999';
+            confetti.style.borderRadius = '5px';
+            confetti.style.animation = `fall ${Math.random() * 2 + 2}s linear forwards`;
+            document.body.appendChild(confetti);
+            setTimeout(() => { confetti.remove(); }, 4000);
+        }
+    }
+
+    // animasi fall juga untuk confetti (tambahan keyframes via JS)
+    const styleSheet = document.createElement("style");
+    styleSheet.innerHTML = `
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+</script>
+
+</body>
+</html>
